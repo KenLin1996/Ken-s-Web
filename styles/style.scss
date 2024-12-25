@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  font-family: "Helvetica,Microsoft JhengHei", sans-serif;
+  background: linear-gradient(45deg, #e7eff4, #fff, #dee3e7);
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding: 8px 20px;
+    // background: #fff;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        margin: 12px 16px;
+        a {
+          display: inline-block;
+          color: black;
+          text-decoration: none;
+          transition: transform 0.3s ease, color 0.3s ease; /* 設定過渡效果 */
+
+          &:hover {
+            transform: translateY(-5px);
+            color: #007bff;
+            color: #5992af;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  // background-color: #f9fafb;
+  background: linear-gradient(45deg, #e7eff4, #fff, #dee3e7);
+
+  section.main-area {
+    min-height: 90vh;
+    // background: linear-gradient(45deg, #e7eff4, #fff, #dee3e7);
+
+    // background-color: #fff;
+    // background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    div.info {
+      flex-basis: 500px;
+      padding: 16px;
+
+      h1 {
+        font-size: 56px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+
+      a {
+        color: white;
+        background-color: #467086;
+        padding: 8px 26px;
+        font-size: 18px;
+        border-radius: 8px;
+        display: inline-block;
+        margin-top: 2rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        &:hover {
+          background-color: #3c7895;
+          transform: scale(1.05);
+          //   box-shadow: ;
+        }
+      }
+    }
+
+    div.img-area {
+      flex-basis: 450px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  section.learning-process {
+    background-color: rgb(231, 255, 233);
+    background-color: #f9fafb;
+    background: linear-gradient(45deg, #dee3e7, #e7eff4, #fff, #dee3e7);
+
+    padding: 80px 0px;
+    display: flex;
+    justify-content: center;
+
+    section.description {
+      width: 50%;
+      width: 60%;
+      width: 66%;
+      margin: 0px 40px;
+      width: 900px;
+
+      // width: 100%;
+      text-align: center;
+      .description-title {
+        margin: auto;
+        // width: 65%;
+      }
+      h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      P {
+        text-align: left;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #000;
+    background-color: #d5e3ee;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .content {
+    padding: 20px 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+
+    h3 {
+      text-align: left;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .content-p {
+      font-size: 16px;
+    }
+  }
+}
+
+.container {
+  background-color: inherit;
+  padding: 15px 40px;
+  width: 50%;
+  position: relative;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -14px;
+    background-color: white;
+    border: 4px solid #4b819c96;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  &.left {
+    left: 0;
+
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+  }
+
+  &.right {
+    left: 50%;
+
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    &::after {
+      left: -14px;
+    }
+  }
+}
