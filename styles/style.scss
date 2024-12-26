@@ -80,7 +80,8 @@ main {
     align-items: center;
 
     div.info {
-      flex-basis: 500px;
+      // flex-basis: 500px;
+      // flex: 1;
       padding: 16px;
 
       h1 {
@@ -143,42 +144,38 @@ main {
   }
 
   section.skills {
+    background: linear-gradient(135deg, #dee3e7, #e7eff4, #fff, #dee3e7, #fff);
+
     padding: 80px 0px;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     section.list {
       display: flex;
-      flex-wrap: nowrap;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
       margin: 0px 40px;
       width: 900px;
-      text-align: start;
 
       h2 {
         text-align: center;
+        font-size: 32px;
         margin-bottom: 20px;
       }
       .window-wrapper {
         display: flex;
-        // flex-wrap: wrap;
         width: 100%;
       }
       .terminal-window {
         display: flex;
         flex-direction: column;
-        gap: 8px;
         gap: 10px;
-        // width: 85%;
         width: 100%;
-        // height: 100%;
         background-color: #1e1e1e;
-        // padding: 20px;
         padding: 40px 56px;
-        // margin: 0px 10px;
         margin: 10px;
         border-radius: 10px;
         border: 2px solid #333;
@@ -193,6 +190,131 @@ main {
           color: var(--color);
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  section.projects {
+    // background: linear-gradient(135deg, #dee3e7, #e7eff4, #fff, #dee3e7);
+
+    padding: 80px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0px 40px;
+
+      // width: 900px;
+      max-width: 1200px;
+      h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .project-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        margin: 32px 0px;
+        margin: 56px 0px;
+
+        .project-img-wrapper {
+          display: flex;
+          flex-direction: column;
+
+          width: 56%;
+          padding: 10px;
+
+          margin: 10px;
+
+          order: 1;
+
+          img {
+            width: 100%;
+          }
+        }
+        .project-description {
+          display: flex;
+          flex-direction: column;
+
+          width: 44%;
+          padding: 16px;
+
+          order: 0;
+
+          .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+
+            display: inline-flex;
+            align-items: center;
+
+            a {
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+            }
+            i {
+              font-size: 20px;
+              margin-left: 8px;
+              color: black;
+            }
+          }
+          .project-info {
+            margin-bottom: 8px;
+          }
+          .project-techniques {
+            margin: 12px 0px;
+          }
+          .project-links {
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a {
+              text-decoration: none;
+              color: #000;
+              &:first-child {
+                font-size: 20px;
+
+                font-weight: bold;
+                color: #84c1ff;
+              }
+              &:last-child {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .project-wrapper:nth-child(even) {
+      .project-img-wrapper {
+        order: 1;
+      }
+      .project-description {
+        order: 0;
+      }
+    }
+
+    .project-wrapper:nth-child(odd) {
+      .project-img-wrapper {
+        order: 0;
+      }
+      .project-description {
+        order: 1;
       }
     }
   }
@@ -291,7 +413,15 @@ main {
   }
 }
 
-// nav bar RWD
+//RWD
+@media screen and (max-width: 994px) {
+  section.main-area {
+    div.img-area {
+      display: none;
+    }
+  }
+}
+
 @media screen and (max-width: 960px) {
   main {
     margin-top: 30px;
@@ -308,6 +438,21 @@ main {
   .list {
     .window-wrapper {
       flex-wrap: wrap;
+    }
+  }
+  .project-list {
+    .project-wrapper {
+      flex-wrap: wrap;
+      display: block !important;
+
+      .project-description {
+        width: 100% !important;
+        order: 2;
+      }
+      .project-img-wrapper {
+        width: 100% !important;
+        order: 0;
+      }
     }
   }
 }

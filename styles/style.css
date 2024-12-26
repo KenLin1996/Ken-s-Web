@@ -76,7 +76,6 @@ main section.main-area {
   align-items: center;
 }
 main section.main-area div.info {
-  flex-basis: 500px;
   padding: 16px;
 }
 main section.main-area div.info h1 {
@@ -129,22 +128,23 @@ main section.learning-process section.description P {
   font-size: 18px;
 }
 main section.skills {
+  background: linear-gradient(135deg, #dee3e7, #e7eff4, #fff, #dee3e7, #fff);
   padding: 80px 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 main section.skills section.list {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0px 40px;
   width: 900px;
-  text-align: start;
 }
 main section.skills section.list h2 {
   text-align: center;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 main section.skills section.list .window-wrapper {
@@ -154,7 +154,6 @@ main section.skills section.list .window-wrapper {
 main section.skills section.list .terminal-window {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   gap: 10px;
   width: 100%;
   background-color: #1e1e1e;
@@ -171,6 +170,104 @@ main section.skills section.list .terminal-window p {
   --color: var(--green);
   color: var(--color);
   cursor: pointer;
+}
+main section.projects {
+  padding: 80px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section.projects .project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 40px;
+  max-width: 1200px;
+}
+main section.projects .project-list h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+main section.projects .project-list .project-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 32px 0px;
+  margin: 56px 0px;
+}
+main section.projects .project-list .project-wrapper .project-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 56%;
+  padding: 10px;
+  margin: 10px;
+  order: 1;
+}
+main section.projects .project-list .project-wrapper .project-img-wrapper img {
+  width: 100%;
+}
+main section.projects .project-list .project-wrapper .project-description {
+  display: flex;
+  flex-direction: column;
+  width: 44%;
+  padding: 16px;
+  order: 0;
+}
+main section.projects .project-list .project-wrapper .project-description .project-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+main section.projects .project-list .project-wrapper .project-description .project-title a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+main section.projects .project-list .project-wrapper .project-description .project-title i {
+  font-size: 20px;
+  margin-left: 8px;
+  color: black;
+}
+main section.projects .project-list .project-wrapper .project-description .project-info {
+  margin-bottom: 8px;
+}
+main section.projects .project-list .project-wrapper .project-description .project-techniques {
+  margin: 12px 0px;
+}
+main section.projects .project-list .project-wrapper .project-description .project-links {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main section.projects .project-list .project-wrapper .project-description .project-links a {
+  text-decoration: none;
+  color: #000;
+}
+main section.projects .project-list .project-wrapper .project-description .project-links a:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  color: #84c1ff;
+}
+main section.projects .project-list .project-wrapper .project-description .project-links a:last-child {
+  font-size: 16px;
+}
+main section.projects .project-wrapper:nth-child(even) .project-img-wrapper {
+  order: 1;
+}
+main section.projects .project-wrapper:nth-child(even) .project-description {
+  order: 0;
+}
+main section.projects .project-wrapper:nth-child(odd) .project-img-wrapper {
+  order: 0;
+}
+main section.projects .project-wrapper:nth-child(odd) .project-description {
+  order: 1;
 }
 
 .timeline {
@@ -258,6 +355,11 @@ main section.skills section.list .terminal-window p {
   left: -14px;
 }
 
+@media screen and (max-width: 994px) {
+  section.main-area div.img-area {
+    display: none;
+  }
+}
 @media screen and (max-width: 960px) {
   main {
     margin-top: 30px;
@@ -273,6 +375,18 @@ main section.skills section.list .terminal-window p {
   }
   .list .window-wrapper {
     flex-wrap: wrap;
+  }
+  .project-list .project-wrapper {
+    flex-wrap: wrap;
+    display: block !important;
+  }
+  .project-list .project-wrapper .project-description {
+    width: 100% !important;
+    order: 2;
+  }
+  .project-list .project-wrapper .project-img-wrapper {
+    width: 100% !important;
+    order: 0;
   }
 }
 @media screen and (max-width: 570px) {
