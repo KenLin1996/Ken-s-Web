@@ -1,9 +1,15 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+:root {
+  --black: #23232b;
+  --green: #00ff00;
 }
 
 h1,
@@ -46,6 +52,17 @@ body nav ul li a:hover {
   transform: translateY(-5px);
   color: #007bff;
   color: #5992af;
+}
+body nav .links-icon {
+  display: none;
+  margin: 0px;
+}
+body nav .links-icon img {
+  width: 50px;
+  height: 50px;
+}
+body nav .hamburger-menu {
+  display: none;
 }
 
 main {
@@ -90,17 +107,12 @@ main section.main-area div.img-area img {
   width: 100%;
 }
 main section.learning-process {
-  background-color: rgb(231, 255, 233);
-  background-color: #f9fafb;
   background: linear-gradient(45deg, #dee3e7, #e7eff4, #fff, #dee3e7);
   padding: 80px 0px;
   display: flex;
   justify-content: center;
 }
 main section.learning-process section.description {
-  width: 50%;
-  width: 60%;
-  width: 66%;
   margin: 0px 40px;
   width: 900px;
   text-align: center;
@@ -115,6 +127,50 @@ main section.learning-process section.description h2 {
 main section.learning-process section.description P {
   text-align: left;
   font-size: 18px;
+}
+main section.skills {
+  padding: 80px 0px;
+  display: flex;
+  justify-content: center;
+}
+main section.skills section.list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 40px;
+  width: 900px;
+  text-align: start;
+}
+main section.skills section.list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+main section.skills section.list .window-wrapper {
+  display: flex;
+  width: 100%;
+}
+main section.skills section.list .terminal-window {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  gap: 10px;
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 40px 56px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+main section.skills section.list .terminal-window p {
+  font-family: "VT323", monospace;
+  font-size: 36px;
+  letter-spacing: 1px;
+  --color: var(--green);
+  color: var(--color);
+  cursor: pointer;
 }
 
 .timeline {
@@ -200,4 +256,36 @@ main section.learning-process section.description P {
 }
 .container.right::after {
   left: -14px;
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    margin-top: 30px;
+  }
+  .external-links {
+    display: none;
+  }
+  body nav {
+    justify-content: center;
+  }
+  body nav .hamburger-menu {
+    display: block;
+  }
+  .list .window-wrapper {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 570px) {
+  body nav ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .links .ms-570 {
+    display: none;
+  }
+  .links .links-icon {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */
